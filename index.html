@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="埃及猫原版视频 - 提供高清正版埃及猫饲养、训练、健康护理及品种展示视频资源，帮助爱猫人士深入了解埃及猫特性。">
+    <meta name="keywords" content="埃及猫原版视频, 埃及猫, 猫咪视频, 养猫指南, 埃及猫护理">
+    <title>埃及猫原版视频-高清正版饲养与护理视频指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --text-light: #666666;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: 1px solid #ddd;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .search-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Main Layout */
+        .main-content {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: var(--spacing-lg);
+            padding: var(--spacing-lg) 0;
+        }
+
+        /* Video Section */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: var(--spacing-md);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .video-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumbnail-wrapper {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #eee;
+        }
+
+        .thumbnail-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .card-content {
+            padding: var(--spacing-md);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-sm);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .card-tags {
+            margin-top: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            background-color: #f0f2f5;
+            color: var(--text-light);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid #eee;
+        }
+
+        .category-list li {
+            margin-bottom: 8px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+
+        .category-list a:hover {
+            color: var(--accent-color);
+        }
+
+        .category-list span {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        /* Features/Intro Section */
+        .features {
+            background-color: white;
+            padding: var(--spacing-lg) 0;
+            margin-top: var(--spacing-lg);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: var(--spacing-md);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--accent-color);
+        }
+
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .feature-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--spacing-lg) 0;
+            margin-top: var(--spacing-lg);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .footer-col h4 {
+            margin-bottom: var(--spacing-md);
+            color: var(--accent-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: var(--spacing-lg);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: var(--spacing-md) 0;
+                gap: var(--spacing-md);
+            }
+
+            nav ul {
+                gap: var(--spacing-md);
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <span>◆</span> 埃及猫视界
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">品种介绍</a></li>
+                    <li><a href="#">饲养指南</a></li>
+                    <li><a href="#">视频库</a></li>
+                    <li><a href="#">社区交流</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn">搜索视频</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>探索埃及猫原版视频</h1>
+            <p>汇聚高清正版饲养、训练与护理视频，带您深入了解这种古老而优雅的猫咪品种。</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">高清视频</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">20w+</div>
+                    <div class="stat-label">累计播放</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">原版资源</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container main-content">
+        <!-- Video Grid Section -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">最新原版视频</h2>
+                <a href="#" style="color: var(--accent-color); font-size: 0.9rem;">查看全部 &rarr;</a>
+            </div>
+            
+            <div class="video-grid">
+                <!-- Video Card 1 -->
+                <article class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <img src="https://picsum.photos/seed/egyptian1/400/225" alt="埃及猫幼崽互动视频">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">埃及猫幼崽成长记录：从出生到3个月</h3>
+                        <div class="card-meta">12.5万次播放 · 2天前</div>
+                        <div class="card-tags">
+                            <span class="tag">幼猫护理</span>
+                            <span class="tag">成长记录</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Video Card 2 -->
+                <article class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <img src="https://picsum.photos/seed/egyptian2/400/225" alt="埃及猫训练教程">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">专业训猫师教你如何训练埃及猫定点如厕</h3>
+                        <div class="card-meta">8.2万次播放 · 5天前</div>
+                        <div class="card-tags">
+                            <span class="tag">训练教程</span>
+                            <span class="tag">行为纠正</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Video Card 3 -->
+                <article class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <img src="https://picsum.photos/seed/egyptian3/400/225" alt="埃及猫毛发护理">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">埃及猫短毛护理指南：如何保持毛发光泽</h3>
+                        <div class="card-meta">5.6万次播放 · 1周前</div>
+                        <div class="card-tags">
+                            <span class="tag">美容护理</span>
+                            <span class="tag">毛发管理</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Video Card 4 -->
+                <article class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <img src="https://picsum.photos/seed/egyptian4/400/225" alt="埃及猫健康饮食">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">埃及猫专属食谱：营养均衡与健康饮食建议</h3>
+                        <div class="card-meta">9.1万次播放 · 3天前</div>
+                        <div class="card-tags">
+                            <span class="tag">健康饮食</span>
+                            <span class="tag">营养搭配</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Video Card 5 -->
+                <article class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <img src="https://picsum.photos/seed/egyptian5/400/225" alt="埃及猫性格测试">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">揭秘埃及猫性格：它们真的像传说中那样高冷吗？</h3>
+                        <div class="card-meta">15.3万次播放 · 1个月前</div>
+                        <div class="card-tags">
+                            <span class="tag">性格分析</span>
+                            <span class="tag">品种科普</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Video Card 6 -->
+                <article class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <img src="https://picsum.photos/seed/egyptian6/400/225" alt="埃及猫社交视频">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">埃及猫与其他宠物的相处实录</h3>
+                        <div class="card-meta">6.7万次播放 · 4天前</div>
+                        <div class="card-tags">
+                            <span class="tag">社交</span>
+                            <span class="tag">宠物混养</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">视频分类</h3>
+                <ul class="category-list">
+                    <li><a href="#">全部视频 <span>500+</span></a></li>
+                    <li><a href="#">幼猫饲养 <span>120</span></a></li>
+                    <li><a href="#">日常护理 <span>85</span></a></li>
+                    <li><a href="#">行为训练 <span>60</span></a></li>
+                    <li><a href="#">品种展示 <span>45</span></a></li>
+                    <li><a href="#">医疗健康 <span>30</span></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">热门标签</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <span class="tag">埃及猫</span>
+                    <span class="tag">原版视频</span>
+                    <span class="tag">短毛猫</span>
+                    <span class="tag">高冷</span>
+                    <span class="tag">互动</span>
+                    <span class="tag">掉毛少</span>
+                </div>
+            </div>
+
+            <div class="sidebar-card" style="background-color: #fff8e1; border: 1px solid #ffe0b2;">
+                <h3 class="sidebar-title" style="color: #e65100;">饲养提示</h3>
+                <p style="font-size: 0.9rem; color: #5d4037; margin-bottom: 8px;">
+                    埃及猫虽然性格独立，但仍需要定期的身体接触和玩耍时间。
+                </p>
+                <a href="#" style="color: #e65100; font-size: 0.85rem; font-weight: 600;">阅读完整指南 &rarr;</a>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">★</div>
+                    <h4 class="feature-title">高清画质</h4>
+                    <p class="feature-desc">所有视频均提供1080P高清原版画质，还原猫咪每一个灵动瞬间。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <h4 class="feature-title">正版授权</h4>
+                    <p class="feature-desc">严格筛选正版饲养师与专业兽医发布的视频，内容真实可靠。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">♥</div>
+                    <h4 class="feature-title">专业指导</h4>
+                    <p class="feature-desc">涵盖从幼猫喂养到老年护理的全周期专业视频教程。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>关于埃及猫视界</h4>
+                <p style="color: #ccc; font-size: 0.9rem; line-height: 1.6;">
+                    我们致力于提供最优质的埃及猫原版视频资源，帮助爱猫人士更好地了解和照顾这种神秘的猫咪品种。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">常见问题</a></li>
+                    <li><a href="#">视频播放失败</a></li>
+                    <li><a href="#">账号注册</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 埃及猫视界. All Rights Reserved. 本站所有内容仅供学习交流使用。</p>
+        </div>
+    </footer>
+
+</body>
+                      </html>
