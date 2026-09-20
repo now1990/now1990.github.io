@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="清炖草鱼的家常做法详解，包含食材准备、详细步骤、火候控制及营养搭配技巧，助您轻松做出鲜美嫩滑的清炖鱼汤。">
+    <meta name="keywords" content="清炖草鱼的家常做法,清炖鱼汤做法,草鱼做法,家常菜谱,鱼汤做法">
+    <title>清炖草鱼的家常做法 - 鲜美嫩滑的鱼汤烹饪指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-color);
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* 首屏 Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 主要内容网格 */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* 左侧内容区 */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .recipe-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        .recipe-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .recipe-info {
+            padding: 2rem;
+        }
+
+        .recipe-info h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .tags {
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #f0f2f5;
+            color: var(--text-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+
+        .ingredients-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .ingredient-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ingredient-item input[type="checkbox"] {
+            accent-color: var(--accent-color);
+            width: 16px;
+            height: 16px;
+        }
+
+        .steps-list {
+            counter-reset: step-counter;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--text-light);
+        }
+
+        /* 右侧侧边栏 */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid #eee;
+        }
+
+        .sidebar-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .tips-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1rem;
+            position: relative;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .tips-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background-color: #000;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .video-placeholder::after {
+            content: "▶ 播放视频教程";
+            font-size: 1.2rem;
+            font-weight: bold;
+            background: rgba(0,0,0,0.5);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            background-color: var(--card-bg);
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            color: var(--text-light);
+            display: none;
+            margin-top: 0.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: "▼";
+            font-size: 0.8rem;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 3rem 0;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .recipe-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <div class="logo">
+            <span>🐟</span> 美味厨房
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">家常菜谱</a></li>
+                <li><a href="#">汤羹大全</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <h1>清炖草鱼的家常做法</h1>
+        <p>无需复杂调料，只需简单几步，还原鱼肉最本真的鲜美，汤白如奶，鱼肉滑嫩。</p>
+    </section>
+
+    <div class="main-grid">
+        <!-- 左侧主要内容 -->
+        <article class="content-area">
+            <div class="recipe-card">
+                <img src="https://picsum.photos/seed/fishsoup/800/400" alt="清炖草鱼成品图" class="recipe-image">
+                <div class="recipe-info">
+                    <div class="tags">
+                        <span class="tag">汤羹</span>
+                        <span class="tag">家常菜</span>
+                        <span class="tag">老少皆宜</span>
+                        <span class="tag">清淡</span>
+                    </div>
+                    <h2>清炖草鱼汤</h2>
+                    <p>草鱼刺多，但肉质鲜美，非常适合炖汤。清炖能最大程度保留鱼肉的营养和鲜味，汤汁乳白，富含蛋白质，是秋冬季节暖身滋补的佳品。</p>
+                    
+                    <h3 class="section-title">所需食材</h3>
+                    <div class="ingredients-list">
+                        <label class="ingredient-item">
+                            <input type="checkbox" checked> 草鱼 1条 (约500g-800g)
+                        </label>
+                        <label class="ingredient-item">
+                            <input type="checkbox" checked> 姜片 5-6片
+                        </label>
+                        <label class="ingredient-item">
+                            <input type="checkbox" checked> 大葱 1段
+                        </label>
+                        <label class="ingredient-item">
+                            <input type="checkbox" checked> 香菜 适量
+                        </label>
+                        <label class="ingredient-item">
+                            <input type="checkbox" checked> 料酒 1勺
+                        </label>
+                        <label class="ingredient-item">
+                            <input type="checkbox" checked> 白胡椒粉 适量
+                        </label>
+                        <label class="ingredient-item">
+                            <input type="checkbox" checked> 盐 适量
+                        </label>
+                        <label class="ingredient-item">
+                            <input type="checkbox" checked> 食用油 少许
+                        </label>
+                    </div>
+
+                    <h3 class="section-title">烹饪步骤</h3>
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>处理草鱼</h3>
+                                <p>将草鱼去鳞、去内脏、去鳃，洗净后切成大块。用少许料酒和盐腌制10分钟去腥，然后用厨房纸吸干表面水分。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>煎鱼定型</h3>
+                                <p>锅中倒入适量食用油，烧热后放入姜片爆香。将鱼块平铺入锅，中小火慢煎。不要频繁翻动，煎至两面金黄定型，这步是汤白的关键。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>加入开水炖煮</h3>
+                                <p>沿锅边淋入开水（一定要开水），水量要没过鱼身。加入葱段，大火煮开后转中小火炖煮15-20分钟。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>调味出锅</h3>
+                                <p>出锅前5分钟加入适量盐和白胡椒粉调味。撒上香菜段，即可关火装盘。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- 右侧侧边栏 -->
+        <aside>
+            <div class="sidebar-card">
+                <h3>💡 烹饪小贴士</h3>
+                <ul class="tips-list">
+                    <li><strong>鱼要干：</strong>下锅前一定要擦干鱼身水分，防止溅油。</li>
+                    <li><strong>开水煮：</strong>炖汤必须加开水，冷水会让蛋白质瞬间凝固，汤不易变白。</li>
+                    <li><strong>火候：</strong>大火煮沸后转小火慢炖，才能熬出乳白色的汤。</li>
+                    <li><strong>去腥：</strong>除了料酒，多放姜片和葱段效果更好。</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>🎥 视频教程</h3>
+                <div class="video-placeholder">
+                    <!-- 占位符，实际项目中可替换为iframe -->
+                </div>
+                <p style="margin-top:0.5rem; font-size:0.9rem; color:#666;">点击查看高清烹饪演示</p>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>营养搭配建议</h3>
+                <p style="color:var(--text-light); font-size:0.9rem; margin-bottom:0.5rem;">清炖草鱼汤味道鲜美，适合搭配一些蔬菜：</p>
+                <ul class="tips-list">
+                    <li><strong>白萝卜：</strong>解腻消食，增加汤的甜味。</li>
+                    <li><strong>豆腐：</strong>增加植物蛋白，口感嫩滑。</li>
+                    <li><strong>冬瓜：</strong>利尿消肿，适合夏季食用。</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- 常见问题 -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">常见问题 (FAQ)</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">为什么我的鱼汤不白？</div>
+                <div class="faq-answer">鱼汤不白通常是因为火候不够或加水时机不对。关键在于“煎鱼”和“开水下锅”。高温煎制能逼出鱼肉中的油脂，开水能让油脂迅速乳化，从而形成乳白色的汤。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">草鱼刺多，怎么吃比较安全？</div>
+                <div class="faq-answer">清炖时尽量将鱼头和鱼骨炖得酥烂，鱼肉要炖至一抿即化的程度。建议使用汤勺，喝汤时注意避开大刺，吃鱼肉时细嚼慢咽。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">可以不放盐吗？</div>
+                <div class="faq-answer">建议出锅前再放盐。过早放盐会使鱼肉中的蛋白质凝固，导致肉质变柴，不易炖烂，且汤的鲜味会流失。</div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2023 美味厨房食谱网 - 专注分享家常菜做法</p>
+        <p style="margin-top:0.5rem;">本站内容仅供学习交流，请勿用于商业用途。</p>
+    </div>
+</footer>
+
+<script>
+    // 简单的FAQ折叠逻辑
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // 如果希望每次点击只展开一个，取消下面注释
+                /*
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) otherItem.classList.remove('active');
+                });
+                */
+                item.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
