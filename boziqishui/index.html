@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>波子汽水-经典怀旧饮品文化、品牌历史与饮用指南</title>
+    <meta name="description" content="波子汽水专题页，介绍波子汽水的起源、独特玻璃瓶设计与弹珠的趣味、主要品牌（如森永、朝日、可尔必思）的历史、饮用文化以及夏日消暑的完美搭配。">
+    <meta name="keywords" content="波子汽水, 弹珠汽水, 森永波子汽水, 朝日波子汽水, 饮品文化, 怀旧零食, 夏日饮料">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0088cc;
+            --secondary-color: #ff6b6b;
+            --accent-color: #feca57;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --max-width: 1200px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e0f7fa 0%, #fff3e0 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #006994;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: #0077b3;
+            transform: translateY(-2px);
+        }
+
+        /* Culture Section */
+        .culture {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .culture-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .culture-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .culture-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .culture-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .culture-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Brands Section */
+        .brands {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .brand-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .brand-item {
+            background: var(--white);
+            padding: 15px 30px;
+            border-radius: 50px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .brand-item:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        /* Pairing Section */
+        .pairing {
+            padding: 80px 0;
+        }
+
+        .pairing-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .pairing-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .pairing-image {
+            flex: 1;
+            min-width: 300px;
+            background-color: #ffeff0;
+            border-radius: 20px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pairing-image::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            top: -50px;
+            right: -50px;
+        }
+
+        .pairing-list li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .check-icon {
+            color: var(--secondary-color);
+            margin-right: 15px;
+            font-weight: bold;
+            margin-top: 4px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .faq-question:hover {
+            background-color: #f0f8ff;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span>🫧</span> 波子汽水
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#culture" class="active">文化起源</a></li>
+                    <li><a href="#brands">主要品牌</a></li>
+                    <li><a href="#pairing">搭配指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>不仅仅是汽水<br>是夏日的玻璃时光</h1>
+                <p>波子汽水以其独特的玻璃瓶和中间的玻璃弹珠闻名于世。从日本到世界各地，它不仅是饮料，更是一种代表怀旧、精致与仪式感的经典饮品。</p>
+                <a href="#culture" class="cta-button">探索波子文化</a>
+            </div>
+        </section>
+
+        <!-- Culture Section -->
+        <section id="culture" class="culture">
+            <div class="container">
+                <h2 class="section-title">波子汽水文化</h2>
+                <p class="section-subtitle">为什么这种有着玻璃珠的饮料能跨越半个世纪，依然深受喜爱？</p>
+                
+                <div class="culture-grid">
+                    <article class="culture-card">
+                        <span class="culture-icon">🏺</span>
+                        <h3>独特瓶身设计</h3>
+                        <p>波子汽水最显著的特征是玻璃瓶内含有一颗玻璃珠。这颗珠子并非杂质，而是为了防止运输过程中玻璃瓶破裂并避免气体外泄而设计的物理封口。</p>
+                    </article>
+
+                    <article class="culture-card">
+                        <span class="culture-icon">📜</span>
+                        <h3>历史传承</h3>
+                        <p>起源于日本。1921年，日本大仓玻璃公司为森永制果生产了第一款带有玻璃珠的瓶子，开创了这一独特的饮料包装形式，至今已有百年历史。</p>
+                    </article>
+
+                    <article class="culture-card">
+                        <span class="culture-icon">✨</span>
+                        <h3>仪式感体验</h3>
+                        <p>饮用时必须先用力摇晃瓶子，让玻璃珠撞击瓶壁发出声响，然后小心倒出。这种倒出的过程本身就是一种享受，仿佛在进行一场微小的仪式。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brands Section -->
+        <section id="brands" class="brands">
+            <div class="container">
+                <h2 class="section-title">知名品牌</h2>
+                <p class="section-subtitle">全球范围内主要的波子汽水品牌及其特色</p>
+                
+                <div class="brand-list">
+                    <a href="#" class="brand-item">森永波子汽水</a>
+                    <a href="#" class="brand-item">朝日波子汽水</a>
+                    <a href="#" class="brand-item">可尔必思波子汽水</a>
+                    <a href="#" class="brand-item">麒麟波子汽水</a>
+                    <a href="#" class="brand-item">星乃咖啡波子汽水</a>
+                    <a href="#" class="brand-item">Fanta 波子汽水</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pairing Section -->
+        <section id="pairing" class="pairing">
+            <div class="container">
+                <h2 class="section-title">完美搭配指南</h2>
+                <p class="section-subtitle">如何让波子汽水的口感更加丰富？</p>
+                
+                <div class="pairing-container">
+                    <div class="pairing-content">
+                        <ul class="pairing-list">
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <div>
+                                    <strong>日式和果子</strong>
+                                    <p>波子汽水微甜的口感与红豆沙、大福等甜点相得益彰，甜而不腻。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <div>
+                                    <strong>海鲜刺身</strong>
+                                    <p>柑橘味的波子汽水是刺身的绝佳伴侣，能中和油脂，提鲜解腻。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <div>
+                                    <strong>冰淇淋圣代</strong>
+                                    <p>将波子汽水作为冰淇淋的淋酱，冷热交替的口感带来冰爽体验。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <div>
+                                    <strong>麻辣食物</strong>
+                                    <p>碳酸饮料的气泡能有效缓解辛辣感，是火锅或烧烤的完美搭档。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pairing-image">
+                        <!-- Placeholder for visual representation of pairing -->
+                        <div style="text-align: center; color: #ff6b6b;">
+                            <h3 style="font-size: 2rem;">夏日限定<br>快乐水</h3>
+                            <p style="margin-top: 10px;">点击查看更多搭配创意</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2 class="section-title">常见问题解答</h2>
+                <p class="section-subtitle">关于波子汽水的饮用与保存</p>
+                
+                <div class="faq-item">
+                    <div class="faq-question">波子汽水可以直接喝吗？</div>
+                    <div class="faq-answer">是的，波子汽水可以直接饮用。但为了体验其文化特色，建议先摇晃瓶子，感受玻璃珠的撞击声，再小心倒出。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">玻璃珠可以吃吗？</div>
+                    <div class="faq-answer">瓶子内的玻璃珠是食品级玻璃，经过特殊处理，虽然无毒，但硬度极高，不建议吞食。饮用完毕后请妥善处理。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">波子汽水有保质期吗？</div>
+                    <div class="faq-answer">有。未开封的波子汽水保质期通常在6-12个月左右，具体取决于品牌和添加剂成分。开封后应尽快饮用。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">为什么有的瓶子很重？</div>
+                    <div class="faq-answer">瓶身采用厚实的玻璃材质，且内部含有玻璃珠，这使得未开封的瓶子比普通塑料瓶装饮料要重得多，运输成本也更高。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于波子汽水</h4>
+                    <p style="color: #bdc3c7; font-size: 0.9rem; line-height: 1.8;">
+                        我们致力于传播波子汽水的文化与历史，分享关于这款经典饮品的饮用知识、品牌故事和搭配建议。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#culture">文化起源</a></li>
+                        <li><a href="#brands">品牌推荐</a></li>
+                        <li><a href="#pairing">饮用指南</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关推荐</h4>
+                    <ul>
+                        <li><a href="#">日本饮食文化</a></li>
+                        <li><a href="#">怀旧零食合集</a></li>
+                        <li><a href="#">夏日饮品DIY</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 波子汽水文化站. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Interaction
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
