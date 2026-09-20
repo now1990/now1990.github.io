@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cctv1天气预报-权威气象资讯与全国城市预报查询</title>
+    <meta name="description" content="提供CCTV-1《天气预报》权威气象资讯，包含全国主要城市及全球重点地区的未来24小时及7天天气预报、空气质量指数、生活指数及气象预警信息。">
+    <meta name="keywords" content="cctv1天气预报,中国天气网,天气预报查询,全国天气预报,城市天气,空气质量">
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --accent-cyan: #00a8e8;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #f4f6f9;
+            --bg-white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-blue);
+        }
+
+        .search-btn {
+            background: var(--bg-light);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--text-gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-btn:hover {
+            background: #e9ecef;
+            color: var(--text-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-cyan) 100%);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: -30px auto 40px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Search Box */
+        .search-box {
+            background: var(--bg-white);
+            padding: 24px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary-blue);
+        }
+
+        .search-box button {
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0 24px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-box button:hover {
+            background-color: #004494;
+        }
+
+        /* Grid Layout */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+
+        /* Section Styles */
+        .section-card {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 18px;
+            background-color: var(--accent-cyan);
+            border-radius: 2px;
+        }
+
+        .more-link {
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        .more-link:hover {
+            color: var(--primary-blue);
+        }
+
+        /* City List */
+        .city-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 16px;
+        }
+
+        .city-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .city-item:hover {
+            background: white;
+            border-color: #e0e0e0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transform: translateY(-2px);
+        }
+
+        .city-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .city-temp {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 4px;
+        }
+
+        .city-condition {
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        .city-desc {
+            font-size: 12px;
+            color: var(--text-gray);
+            margin-top: 8px;
+        }
+
+        /* AQI Section */
+        .aqi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .aqi-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .aqi-value {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .aqi-level {
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        .aqi-good { color: #28a745; }
+        .aqi-moderate { color: #ffc107; }
+        .aqi-unhealthy { color: #dc3545; }
+
+        /* Radar Map Placeholder */
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            font-size: 14px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 86, 179, 0.8);
+            color: white;
+            padding: 8px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        /* Warnings */
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px 16px;
+            margin-bottom: 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .warning-icon {
+            font-size: 18px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 40px 20px 20px;
+            font-size: 14px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            .header-inner {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 10px 20px;
+            }
+            nav {
+                width: 100%;
+                margin-top: 10px;
+            }
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+            .search-box {
+                flex-direction: column;
+            }
+            .search-box button {
+                width: 100%;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="#" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19c0-1.7-1.3-3-3-3h-11a3 3 0 0 1-3-3V7c0-1.7 1.3-3 3-3h11a3 3 0 0 1 3 3v2"/><path d="M14 16l-2-2-2 2-2-2-2 2"/></svg>
+            CCTV-1<span>天气预报</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">全国预报</a></li>
+                <li><a href="#">生活指数</a></li>
+                <li><a href="#">气象灾害预警</a></li>
+                <li><a href="#">视频直播</a></li>
+            </ul>
+        </nav>
+        <div class="search-btn">🔍 查询城市</div>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>掌握风云变幻，守护平安出行</h1>
+        <p>为您提供CCTV-1《天气预报》同步权威气象信息</p>
+    </section>
+
+    <div class="container">
+        <!-- Search Section -->
+        <div class="search-box">
+            <input type="text" placeholder="请输入城市名称，例如：北京、上海、广州..." id="cityInput">
+            <button onclick="searchCity()">查询天气</button>
+        </div>
+
+        <!-- Warnings -->
+        <div class="warning-box">
+            <span class="warning-icon">⚠️</span>
+            <div>
+                <strong>气象预警提示：</strong> 预计未来24小时内，江南东部、华南东部等地部分地区有大到暴雨，局地伴有短时强降水和雷暴大风等强对流天气，请注意防范。
+            </div>
+        </div>
+
+        <div class="grid-layout">
+            <!-- Left Column -->
+            <div class="main-content">
+                <!-- Current Conditions -->
+                <section class="section-card">
+                    <div class="section-header">
+                        <h2 class="section-title">全国主要城市实况</h2>
+                        <a href="#" class="more-link">查看全部 &gt;</a>
+                    </div>
+                    <div class="city-list" id="cityList">
+                        <!-- Populated by JS for realism -->
+                        <div class="city-item">
+                            <span class="city-name">北京</span>
+                            <span class="city-temp">24°</span>
+                            <span class="city-condition">晴</span>
+                            <span class="city-desc">空气质量优 35</span>
+                        </div>
+                        <div class="city-item">
+                            <span class="city-name">上海</span>
+                            <span class="city-temp">26°</span>
+                            <span class="city-condition">多云</span>
+                            <span class="city-desc">空气质量良 62</span>
+                        </div>
+                        <div class="city-item">
+                            <span class="city-name">广州</span>
+                            <span class="city-temp">30°</span>
+                            <span class="city-condition">雷阵雨</span>
+                            <span class="city-desc">局部大雨 85</span>
+                        </div>
+                        <div class="city-item">
+                            <span class="city-name">成都</span>
+                            <span class="city-temp">22°</span>
+                            <span class="city-condition">阴</span>
+                            <span class="city-desc">空气质量良 45</span>
+                        </div>
+                        <div class="city-item">
+                            <span class="city-name">武汉</span>
+                            <span class="city-temp">25°</span>
+                            <span class="city-condition">小雨</span>
+                            <span class="city-desc">体感湿 70</span>
+                        </div>
+                        <div class="city-item">
+                            <span class="city-name">西安</span>
+                            <span class="city-temp">23°</span>
+                            <span class="city-condition">晴</span>
+                            <span class="city-desc">空气质量优 28</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 7-Day Forecast -->
+                <section class="section-card">
+                    <div class="section-header">
+                        <h2 class="section-title">未来七天趋势</h2>
+                        <a href="#" class="more-link">查看详情 &gt;</a>
+                    </div>
+                    <div class="city-list">
+                        <div class="city-item">
+                            <span class="city-name">今天</span>
+                            <span class="city-temp">24°/16°</span>
+                            <span class="city-condition">晴转多云</span>
+                            <span class="city-desc">西北风 3级</span>
+                        </div>
+                        <div class="city-item">
+                            <span class="city-name">明天</span>
+                            <span class="city-temp">25°/17°</span>
+                            <span class="city-condition">多云</span>
+                            <span class="city-desc">东南风 2级</span>
+                        </div>
+                        <div class="city-item">
+                            <span class="city-name">后天</span>
+                            <span class="city-temp">23°/18°</span>
+                            <span class="city-condition">小雨</span>
+                            <span class="city-desc">东南风 4级</span>
+                        </div>
+                        <div class="city-item">
+                            <span class="city-name">周四</span>
+                            <span class="city-temp">21°/19°</span>
+                            <span class="city-condition">阴</span>
+                            <span class="city-desc">微风 2级</span>
+                        </div>
+                        <div class="city-item">
+                            <span class="city-name">周五</span>
+                            <span class="city-temp">22°/20°</span>
+                            <span class="city-condition">晴</span>
+                            <span class="city-desc">西北风 3级</span>
+                        </div>
+                        <div class="city-item">
+                            <span class="city-name">周六</span>
+                            <span class="city-temp">24°/21°</span>
+                            <span class="city-condition">多云</span>
+                            <span class="city-desc">西南风 3级</span>
+                        </div>
+                        <div class="city-item">
+                            <span class="city-name">周日</span>
+                            <span class="city-temp">25°/22°</span>
+                            <span class="city-condition">晴</span>
+                            <span class="city-desc">南风 2级</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Radar Map Simulation -->
+                <section class="section-card">
+                    <div class="section-header">
+                        <h2 class="section-title">气象雷达图</h2>
+                        <a href="#" class="more-link">全图模式 &gt;</a>
+                    </div>
+                    <div class="map-placeholder">
+                        <div style="text-align: center;">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px; opacity: 0.6;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                            <p>实时降水回波监测区域</p>
+                        </div>
+                        <div class="map-overlay">数据来源：中国气象局雷达监测中心</div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <aside class="side-content">
+                <!-- Air Quality -->
+                <section class="section-card">
+                    <div class="section-header">
+                        <h2 class="section-title">空气质量</h2>
+                    </div>
+                    <div class="aqi-grid">
+                        <div class="aqi-item">
+                            <span class="aqi-value aqi-good">35</span>
+                            <span class="aqi-level">优</span>
+                        </div>
+                        <div class="aqi-item">
+                            <span class="aqi-value aqi-moderate">62</span>
+                            <span class="aqi-level">良</span>
+                        </div>
+                        <div class="aqi-item">
+                            <span class="aqi-value aqi-good">42</span>
+                            <span class="aqi-level">优</span>
+                        </div>
+                        <div class="aqi-item">
+                            <span class="aqi-value aqi-unhealthy">88</span>
+                            <span class="aqi-level">轻度污染</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Life Indices -->
+                <section class="section-card">
+                    <div class="section-header">
+                        <h2 class="section-title">生活指数</h2>
+                    </div>
+                    <ul style="font-size: 14px;">
+                        <li style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee;">
+                            <span>穿衣</span>
+                            <span style="color: var(--primary-blue);">短袖T恤</span>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee;">
+                            <span>紫外线</span>
+                            <span style="color: #ffc107;">中等</span>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee;">
+                            <span>洗车</span>
+                            <span style="color: var(--primary-blue);">适宜</span>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee;">
+                            <span>晨练</span>
+                            <span style="color: var(--primary-blue);">适宜</span>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; padding: 8px 0;">
+                            <span>感冒</span>
+                            <span style="color: #dc3545;">少发</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Popular Cities -->
+                <section class="section-card">
+                    <div class="section-header">
+                        <h2 class="section-title">热门城市</h2>
+                    </div>
+                    <div class="city-list">
+                        <a href="#" class="city-item">
+                            <span class="city-name">深圳</span>
+                            <span class="city-temp">29°</span>
+                        </a>
+                        <a href="#" class="city-item">
+                            <span class="city-name">杭州</span>
+                            <span class="city-temp">27°</span>
+                        </a>
+                        <a href="#" class="city-item">
+                            <span class="city-name">重庆</span>
+                            <span class="city-temp">32°</span>
+                        </a>
+                        <a href="#" class="city-item">
+                            <span class="city-name">哈尔滨</span>
+                            <span class="city-temp">15°</span>
+                        </a>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h3>关于我们</h3>
+            <ul>
+                <li><a href="#">网站简介</a></li>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">人才招聘</a></li>
+                <li><a href="#">合作伙伴</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>服务指南</h3>
+            <ul>
+                <li><a href="#">常见问题</a></li>
+                <li><a href="#">使用帮助</a></li>
+                <li><a href="#">意见反馈</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>关注我们</h3>
+            <ul>
+                <li><a href="#">官方微博</a></li>
+                <li><a href="#">微信公众号</a></li>
+                <li><a href="#">APP下载</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2023-2024 气象信息服务网 版权所有 | 数据来源：中国气象局</p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+
+<script>
+    // Simple interaction for the search box
+    function searchCity() {
+        const input = document.getElementById('cityInput');
+        const city = input.value.trim();
+        if(city) {
+            // Simulate a search action
+            alert('正在为您查询 ' + city + ' 的详细天气信息...');
+            // In a real app, this would redirect or fetch data
+        } else {
+            input.focus();
+        }
+    }
+
+    // Allow "Enter" key to trigger search
+    document.getElementById('cityInput').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            searchCity();
+        }
+    });
+</script>
+
+</body>
+                      </html>
