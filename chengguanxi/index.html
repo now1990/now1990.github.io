@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="程冠希 - 香港著名男演员、歌手及导演。本站收录程冠希个人资料、经典影视作品、音乐专辑及演艺生涯重要时刻，提供全方位的娱乐资讯与作品回顾。">
+    <meta name="keywords" content="程冠希,Edison Chen,演员,歌手,导演,电影,音乐,个人资料">
+    <title>程冠希-经典影视作品与个人演艺生涯回顾</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #c4a77d;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.6;
+            /* Using a placeholder gradient that looks like a portrait silhouette */
+            background: radial-gradient(circle at 30% 20%, #333 0%, #000 70%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            padding-left: var(--spacing-unit);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary-color);
+            color: #fff;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #b08d6b;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .section-header h2 {
+            font-size: 28px;
+            color: var(--primary-color);
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-header h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 24px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        /* Biography */
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .bio-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .bio-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: #eee;
+            border: 3px solid var(--secondary-color);
+        }
+
+        .bio-info h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .bio-info p {
+            color: var(--text-light);
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .bio-text {
+            font-size: 16px;
+            color: var(--text-main);
+            text-align: justify;
+        }
+
+        /* Works Section (Grid) */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .work-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .work-img {
+            height: 350px;
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        .work-content {
+            padding: 20px;
+        }
+
+        .work-tag {
+            font-size: 12px;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .work-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .work-desc {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Discography List */
+        .discography-list {
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .disc-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s;
+        }
+
+        .disc-item:last-child {
+            border-bottom: none;
+        }
+
+        .disc-item:hover {
+            background-color: #fafafa;
+        }
+
+        .disc-info h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .disc-meta {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .bio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">程冠希<span>Chen</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">首页</a></li>
+                    <li><a href="#biography">个人资料</a></li>
+                    <li><a href="#filmography">影视作品</a></li>
+                    <li><a href="#music">音乐专辑</a></li>
+                    <li><a href="#news">资讯动态</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg"></div>
+            <div class="container hero-content">
+                <h1>程冠希</h1>
+                <p>香港著名演员、歌手及导演。以独特的音乐风格和多元的影视表演闻名，是华语流行乐坛及香港电影的重要人物。</p>
+                <a href="#filmography" class="btn">浏览经典作品</a>
+            </div>
+        </section>
+
+        <!-- Biography Section -->
+        <section id="biography">
+            <div class="container">
+                <div class="section-header">
+                    <h2>个人简介</h2>
+                </div>
+                <div class="bio-grid">
+                    <div class="bio-card">
+                        <img src="https://picsum.photos/seed/chen/300/300" alt="程冠希照片" class="bio-avatar">
+                        <div class="bio-info">
+                            <h3>基本信息</h3>
+                            <p><strong>英文名：</strong>Edison Chen</p>
+                            <p><strong>出生地：</strong>加拿大温哥华</p>
+                            <p><strong>国籍：</strong>中国香港</p>
+                            <p><strong>职业：</strong>演员、歌手、导演</p>
+                        </div>
+                    </div>
+                    <div class="bio-text">
+                        <p>程冠希，1980年10月7日出生于加拿大温哥华，祖籍中国广东省江门市新会区，成长于香港。他是华语流行乐坛的男歌手及演员，也是香港男子流行演唱组合Cool的成员之一。</p>
+                        <br>
+                        <p>程冠希于2000年出道，凭借个人首张同名EP《Edison》正式进入演艺圈。其音乐风格融合了Hip-Hop、R&B等元素，嗓音独特，深受年轻听众喜爱。在影视方面，他出演过《无间道》、《头文字D》、《窃听风云》等多部票房与口碑俱佳的电影作品。</p>
+                        <br>
+                        <p>除了演艺事业，程冠希亦涉足商业领域，拥有自己的潮牌店。近年来，他逐渐将重心转向幕后制作与导演工作，展现了多方面的才华。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filmography Section -->
+        <section id="filmography" style="background-color: #fff;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>经典影视作品</h2>
+                </div>
+                <div class="works-grid">
+                    <!-- Movie 1 -->
+                    <article class="work-card">
+                        <img src="https://picsum.photos/seed/infernal/400/600" alt="无间道 电影海报" class="work-img">
+                        <div class="work-content">
+                            <span class="work-tag">电影</span>
+                            <h3 class="work-title">无间道</h3>
+                            <p class="work-desc">饰演刘建明。这部经典警匪片重塑了香港电影的辉煌，程冠希的表演细腻而充满张力。</p>
+                        </div>
+                    </article>
+                    <!-- Movie 2 -->
+                    <article class="work-card">
+                        <img src="https://picsum.photos/seed/tokyodrift/400/600" alt="头文字D 电影海报" class="work-img">
+                        <div class="work-content">
+                            <span class="work-tag">电影</span>
+                            <h3 class="work-title">头文字D</h3>
+                            <p class="work-desc">饰演高桥凉介。在刘伟强导演的这部赛车电影中，展现了其偶像派的魅力与演技。</p>
+                        </div>
+                    </article>
+                    <!-- Movie 3 -->
+                    <article class="work-card">
+                        <img src="https://picsum.photos/seed/confession/400/600" alt="窃听风云 电影海报" class="work-img">
+                        <div class="work-content">
+                            <span class="work-tag">电影</span>
+                            <h3 class="work-title">窃听风云</h3>
+                            <p class="work-desc">饰演梁小天。与刘青云、古天乐合作，讲述股市背后的风云变幻。</p>
+                        </div>
+                    </article>
+                    <!-- Movie 4 -->
+                    <article class="work-card">
+                        <img src="https://picsum.photos/seed/initiald2/400/600" alt="头文字D2 电影海报" class="work-img">
+                        <div class="work-content">
+                            <span class="work-tag">电影</span>
+                            <h3 class="work-title">头文字D II</h3>
+                            <p class="work-desc">继续饰演高桥凉介，在东京秋名山的对决中展现车技与友情。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Music Section -->
+        <section id="music">
+            <div class="container">
+                <div class="section-header">
+                    <h2>音乐专辑</h2>
+                </div>
+                <div class="discography-list">
+                    <div class="disc-item">
+                        <div class="disc-info">
+                            <h4>《Edison》</h4>
+                            <span class="disc-meta">2000年发行 • EP</span>
+                        </div>
+                        <span class="disc-meta">代表作：《Last Dance》</span>
+                    </div>
+                    <div class="disc-item">
+                        <div class="disc-info">
+                            <h4>《Sorry》</h4>
+                            <span class="disc-meta">2002年发行 • 专辑</span>
+                        </div>
+                        <span class="disc-meta">代表作：《Sorry》</span>
+                    </div>
+                    <div class="disc-item">
+                        <div class="disc-info">
+                            <h4>《Please》</h4>
+                            <span class="disc-meta">2003年发行 • 专辑</span>
+                        </div>
+                        <span class="disc-meta">代表作：《Please》</span>
+                    </div>
+                    <div class="disc-item">
+                        <div class="disc-info">
+                            <h4>《初生之犊》</h4>
+                            <span class="disc-meta">2004年发行 • 专辑</span>
+                        </div>
+                        <span class="disc-meta">代表作：《Don't Break My Heart》</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News / Recent Section -->
+        <section id="news" style="background-color: #fff;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>近期动态</h2>
+                </div>
+                <div class="bio-text">
+                    <p>程冠希近年来主要活跃于电影监制及导演工作。他参与了多部电影的制作，致力于发掘和培养新生代导演人才。虽然较少公开露面于综艺节目，但他对电影艺术的执着与热情始终未减。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="color: #aaa; font-size: 14px; line-height: 1.8;">
+                        本站致力于提供关于程冠希的全面资料与回顾，包含影视作品、音乐专辑及个人简介，为粉丝及观众提供参考。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#biography">个人资料</a></li>
+                        <li><a href="#filmography">影视作品</a></li>
+                        <li><a href="#music">音乐作品</a></li>
+                        <li><a href="#news">最新资讯</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>友情链接</h4>
+                    <ul>
+                        <li><a href="#">香港电影金像奖</a></li>
+                        <li><a href="#">华语流行音乐</a></li>
+                        <li><a href="#">Cool组合官网</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 程冠希个人资料回顾站. All Rights Reserved. 本站为粉丝制作，非官方网站。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
